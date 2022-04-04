@@ -1,8 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const Wrapper = styled.div`
   display:flex;
+  height:300px;
+  align-items:center;
+  margin-top:200px;
   
 `;
 
@@ -15,6 +18,9 @@ const MainTitle = styled.div`
   color:var(--white);
   opacity:0.5;
   text-align:center;
+  font-family: cursive;
+  font-size:35px;
+  padding-left:100px;
 `;
 
 const MainText = styled.div`
@@ -22,20 +28,28 @@ const MainText = styled.div`
   font-size:100px;
   letter-spacing:5px;
   text-align:center;
+  padding-left:100px;
 `;
 
 const MainSentence = styled.div`
   color:var(--white);
-  text-align:center;
+  text-align:start;
   opacity:0.5;
+  padding-left:100px;
+  font-family: cursive;
+  line-height: 200%;
+  font-size:20px;
+
 `;
 
 const Circle = styled.div`
   border-radius:50%;
   background-color:var(--white);
   position:relative;
-  height:300px;
-  width:300px;
+  height:250px;
+  width:250px;
+  top:50%;
+  left:50%;
 `;
 
 const Text = styled.h2`
@@ -43,10 +57,12 @@ const Text = styled.h2`
   font-size:40px;
   text-align:center;
   position:absolute;
-  top :30%;
-  left:30%;
+  top :27%;
+  left:26%;
   font-family: serif;
   font-weight:100;
+  
+
 `;
 
 
@@ -56,10 +72,10 @@ function Container() {
     <Wrapper>
       <MainContainer>
         <MainTitle>
-          So,you want to travel to
+          SO, YOU WANT TO TRAVEL TO
         </MainTitle>
         <MainText>SPACE</MainText>
-        <MainSentence>Let's face it:if you want to go to space</MainSentence>
+        <MainSentence>Let's face it: if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. WEll sit back, and relax because we'll give you a truly out of this world experience!</MainSentence>
       </MainContainer>
       <MainContainer>
         <Circle>
