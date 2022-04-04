@@ -6,17 +6,18 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  font-size:30px;
+  font-size:20px;
   opacity:0.5;
   color:var(--white);
+  margin:50px 0px 10px 0px;
 `;
 
 const BigLabel = styled.h1`
-  font-size:100px;
+  font-size:60px;
   color:var(--white);
   letter-spacing:2px;
   font-family: serif;
-  margin:50px 0 50px 0;
+  margin:0px 0 50px 0;
   
 `;
 
@@ -27,10 +28,11 @@ const Description = styled.h3`
   font-size:20px;
   letter-spacing:2px;
   padding-right:200px;
+  line-height:1.6;
 `;
 
 
-function SharedDesc({ TitleTech, HeaderTech, DescTech }: {
+function TechnologyDesc({ TitleTech, HeaderTech, DescTech }: {
   TitleTech: string,
   HeaderTech: string,
   DescTech: string
@@ -45,4 +47,4 @@ function SharedDesc({ TitleTech, HeaderTech, DescTech }: {
   );
 }
 
-export default SharedDesc
+export default TechnologyDesc

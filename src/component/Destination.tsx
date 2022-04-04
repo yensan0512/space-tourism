@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Header from "./Header";
-import ShareImg from "./SharedImg";
+import ShareImg, { Wrapper as ShareImgTool } from "./SharedImg";
 import DestinationDesc from "./DestinationDesc";
 
 const Wrapper = styled.div`
@@ -15,7 +15,15 @@ const FlexContainer = styled.div`
 
 const FlexContent = styled.div`
   flex:50%;
+  display:flex;
+  flex-direction:column;
   
+  ${ShareImgTool} {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:100px;
+  }
 `;
 
 
@@ -36,7 +44,12 @@ function Destination() {
         </FlexContent>
 
         <FlexContent>
-          <DestinationDesc />
+          <DestinationDesc
+            Header="A"
+            Description="A"
+            Distance="A"
+            Duration="A"
+          />
         </FlexContent>
       </FlexContainer>
       {/* </Background> */}

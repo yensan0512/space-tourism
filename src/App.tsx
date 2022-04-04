@@ -3,28 +3,30 @@ import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components/macro';
 import Container from './component/Container';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Destination from './component/Destination';
 import Crew from './component/Crew';
 import Technology from './component/Technology';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width:100vw;
   height:100vh;
 `;
 
-const Background = styled.div`
+const Background = styled.div(({ bg }: { bg: string }) => `
   //background: url(static/assets/home/background-home-desktop.jpg);
   //background:url(static/assets/destination/background-destination-desktop.jpg);
   //background: url(static/assets/crew/background-crew-desktop.jpg);
-  background: url(static/assets/technology/background-technology-desktop.jpg);
+  background: url(${bg});
   width:100%;
   height:100%;
   background-size:cover;
 
-`;
+`);
 
 const Layer = styled.div`
   //opacity:0.2;
@@ -49,46 +51,70 @@ const MenuList = styled.div`
   padding:10px 0 10px 0;
 `;
 
-const Menu = styled.div`
+const Menu = styled(Link)`
   color:var(--white);
   font-family: cursive;
+  text-decoration:none;
 
   &:hover {
     cursor:pointer;
     text-decoration:underline;
     text-decoration-color:white;
-    text-decoration-thickness:30%;
-    
-}
-
+    text-decoration-thickness:30%;    
+  }
 `;
 
-// const Menu = styled.div(() => `
-
-// `)
-
-// const Menu.active {
-//   box-shadow: 1px 1px 5px 3px grey;
-// }
 function App() {
 
+  const location = useLocation();
+
+  console.log(location);
+  let background = "";
+
+  if (location.pathname === "/") {
+    background = "static/assets/home/background-home-desktop.jpg";
+  }
+
+  switch (location.pathname) {
+    case "/":
+      background = "static/assets/home/background-home-desktop.jpg";
+      break;
+    case "/destination":
+      background = "static/assets/destination/background-destination-desktop.jpg";
+      break;
+    case "/crew":
+      background = "static/assets/crew/background-crew-desktop.jpg";
+      break;
+    case "/technology":
+      background = "static/assets/technology/background-technology-desktop.jpg";
+      break;
+  }
+
+
   return (
+
     <Wrapper>
-      <Background>
+      <Background bg={background}>
         <Layer>
           <MenuList>
-            <Menu>00 Home</Menu>
-            <Menu>01 Destination</Menu>
-            <Menu>02 Crew</Menu>
-            <Menu>03 Technology</Menu>
+            <Menu to="/">00 Home</Menu>
+            <Menu to="/destination">01 Destination</Menu>
+            <Menu to="/crew">02 Crew</Menu>
+            <Menu to="/technology">03 Technology</Menu>
           </MenuList>
         </Layer>
-        {/* <Container /> */}
-        {/* <Destination /> */}
-        {/* <Crew /> */}
-        <Technology />
+
+
+        <Routes>
+          <Route path="/" element={<Container />} />
+          <Route path="/destination" element={<Destination />} />
+          <Route path="/crew" element={<Crew />} />
+          <Route path="/technology" element={<Technology />} />
+        </Routes>
+
       </Background>
     </Wrapper >
+
   );
 }
 
