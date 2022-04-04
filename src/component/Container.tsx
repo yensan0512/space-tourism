@@ -61,6 +61,7 @@ const Text = styled.h2`
   left:26%;
   font-family: serif;
   font-weight:100;
+  cursor:pointer;
   
 
 `;

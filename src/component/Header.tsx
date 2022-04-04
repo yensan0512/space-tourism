@@ -30,14 +30,6 @@ const TitleText = styled.div`
 
 `;
 
-const ImgMars = styled.img`
-  content:url(static/assets/destination/image-mars.png);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top:100px;
-`;
-
 function Header({ Number, Title }: {
   Number: string,
   Title: string
@@ -47,7 +39,6 @@ function Header({ Number, Title }: {
     <Wrapper>
       <TitleNo>{Number}</TitleNo>
       <TitleText>{Title}</TitleText>
-      {/* <ImgMars /> */}
     </Wrapper>);
 }
 export default Header

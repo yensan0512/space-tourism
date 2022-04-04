@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/macro";
 
 const Wrapper = styled.div``;
@@ -70,19 +70,22 @@ const FlexContainer = styled.div`
   display:flex;
 `;
 
-function DestinationDesc({ Header, Description, Distance, Duration }: {
+function DestinationDesc({ Header, Description, Distance, Duration, handlePlanetClick }: {
   Header: string,
   Description: string,
   Distance: string,
-  Duration: string
+  Duration: string,
+  handlePlanetClick: (s: string) => void
 }) {
+
+
   return (
     <Wrapper>
       <InnerFlexMenuContainer>
-        <InnerFlexContent>MOON</InnerFlexContent>
-        <InnerFlexContent>MARS</InnerFlexContent>
-        <InnerFlexContent>EUROPA</InnerFlexContent>
-        <InnerFlexContent>TITAN</InnerFlexContent>
+        <InnerFlexContent onClick={() => { handlePlanetClick("moon") }}>MOON</InnerFlexContent>
+        <InnerFlexContent onClick={() => { handlePlanetClick("mars") }}>MARS</InnerFlexContent>
+        <InnerFlexContent onClick={() => { handlePlanetClick("europa") }}>EUROPA</InnerFlexContent>
+        <InnerFlexContent onClick={() => { handlePlanetClick("titan") }}>TITAN</InnerFlexContent>
       </InnerFlexMenuContainer>
       <BigLabel>{Header}</BigLabel>
       <Sentence>{Description}</Sentence>

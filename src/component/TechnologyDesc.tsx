@@ -17,7 +17,7 @@ const BigLabel = styled.h1`
   color:var(--white);
   letter-spacing:2px;
   font-family: serif;
-  margin:0px 0 50px 0;
+  margin:0px 0 100px 0;
   
 `;
 
