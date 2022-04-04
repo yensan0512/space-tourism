@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Destination from './component/Destination';
 import Crew from './component/Crew';
+import Technology from './component/Technology';
 
 const Wrapper = styled.div`
   width:100vw;
@@ -17,7 +18,8 @@ const Wrapper = styled.div`
 const Background = styled.div`
   //background: url(static/assets/home/background-home-desktop.jpg);
   //background:url(static/assets/destination/background-destination-desktop.jpg);
-  background: url(static/assets/crew/background-crew-desktop.jpg);
+  //background: url(static/assets/crew/background-crew-desktop.jpg);
+  background: url(static/assets/technology/background-technology-desktop.jpg);
   width:100%;
   height:100%;
   background-size:cover;
@@ -51,6 +53,14 @@ const Menu = styled.div`
   color:var(--white);
   font-family: cursive;
 
+  &:hover {
+    cursor:pointer;
+    text-decoration:underline;
+    text-decoration-color:white;
+    text-decoration-thickness:30%;
+    
+}
+
 `;
 
 // const Menu = styled.div(() => `
@@ -74,7 +84,9 @@ function App() {
           </MenuList>
         </Layer>
         {/* <Container /> */}
-        <Destination />
+        {/* <Destination /> */}
+        {/* <Crew /> */}
+        <Technology />
       </Background>
     </Wrapper >
   );

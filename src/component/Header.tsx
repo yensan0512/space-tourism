@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
+
 const Wrapper = styled.div`
   margin:0;
 `;
@@ -11,7 +12,8 @@ const TitleNo = styled.div`
   font-size:30px;
   display:inline;
   float: left;
-  left: 25%;
+  // left: 25%;
+  left:35%;
   position: relative;
   
 `;
@@ -21,7 +23,8 @@ const TitleText = styled.div`
   font-size:30px;
   display:inline;
   float: left;
-  left: 27%;
+  left:35%;
+  // left: 27%;
   position: relative;
   width:90%;
 
@@ -35,13 +38,16 @@ const ImgMars = styled.img`
   padding-top:100px;
 `;
 
-function Header() {
+function Header({ Number, Title }: {
+  Number: string,
+  Title: string
+}) {
 
   return (
     <Wrapper>
-      <TitleNo>01</TitleNo>
-      <TitleText>PICK YOUR DESTINATION</TitleText>
-      <ImgMars />
+      <TitleNo>{Number}</TitleNo>
+      <TitleText>{Title}</TitleText>
+      {/* <ImgMars /> */}
     </Wrapper>);
 }
 export default Header
