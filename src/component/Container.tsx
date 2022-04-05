@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display:flex;
@@ -52,22 +53,25 @@ const Circle = styled.div`
   left:50%;
 `;
 
-const Text = styled.h2`
+const Text = styled(Link)`
   color:black;
   font-size:40px;
   text-align:center;
   position:absolute;
-  top :27%;
-  left:26%;
+  top :50%;
+  left:50%;
   font-family: serif;
   font-weight:100;
   cursor:pointer;
+  text-decoration:none;
+  transform:translate(-50%,-50%);
   
 
 `;
 
 
 function Container() {
+
 
   return (
     <Wrapper>
@@ -79,11 +83,14 @@ function Container() {
         <MainSentence>Let's face it: if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. WEll sit back, and relax because we'll give you a truly out of this world experience!</MainSentence>
       </MainContainer>
       <MainContainer>
+
         <Circle>
-          <Text>
+          <Text to="/destination">
             Explore
           </Text>
         </Circle>
+
+
       </MainContainer>
     </Wrapper >
   );
