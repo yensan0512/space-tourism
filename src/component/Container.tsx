@@ -8,10 +8,23 @@ const Wrapper = styled.div`
   align-items:center;
   margin-top:200px;
   
+  @media screen and (max-width: 1028px) {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
 `;
 
 const MainContainer = styled.div`
   flex:50%;
+
+  // @media screen and (max-width: 1028px) {
+  //   display: flex;
+  //   justify-content: center;
+
+  //   &#top {
+  //     flex-direction: column;
+  //   }
   
 `;
 
@@ -22,6 +35,10 @@ const MainTitle = styled.div`
   font-family: cursive;
   font-size:35px;
   padding-left:100px;
+
+  @media screen and (max-width: 1028px) {
+    padding-top: 100px;
+  }
 `;
 
 const MainText = styled.div`
@@ -51,6 +68,12 @@ const Circle = styled.div`
   width:250px;
   top:50%;
   left:50%;
+
+  @media screen and (max-width: 1028px) {
+    top:unset;
+    left:unset;
+  }
+
 `;
 
 const Text = styled(Link)`

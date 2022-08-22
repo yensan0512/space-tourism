@@ -7,23 +7,42 @@ const Wrapper = styled.div``;
 
 const FlexContainer = styled.div`
   display:flex;
+
+  @media screen and (max-width: 1028px) {
+    flex-direction: column;
+  }
 `;
 
 const FlexContent = styled.div`
   flex:50%;
   
+  @media screen and (max-width: 1028px) {
+    display: flex;
+    justify-content: center;
+
+    &#top {
+      flex-direction: column;
+    }
+  }
 `;
 
 const Img = styled.img`
   // content:url(static/assets/crew/image-anousheh-ansari.png);
   background-size:cover;
-  padding-top:100px;
+  padding-top:30px;
   justify-self:center;
+
+  @media screen and (max-width: 1028px) {
+    margin-top:0px;
+  }
 `;
 
 const ProfileTabContainer = styled.div`
   padding:50px 0px 0px 180px;
   //text-align:start;
+  @media screen and (max-width: 1028px) {
+    padding:0px 0px 0px 0px;
+  }
 `;
 
 const ProfileTab = styled.div`
@@ -79,10 +98,10 @@ function Crew() {
   return (
     <Wrapper>
       <FlexContainer>
-        <FlexContent>
+        <FlexContent id="top">
           <Header
             Number="02"
-            Title="MEET YOUR CREW" />
+            Title="MEET YOUR CREW HERE" />
           <CrewProfile
             PositionSpace={position}
             NameSpace={NameSpace}

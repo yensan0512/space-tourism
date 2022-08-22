@@ -11,6 +11,10 @@ const Wrapper = styled.div`
 
 const FlexContainer = styled.div`
   display:flex;
+
+  @media screen and (max-width: 1028px) {
+    flex-direction: column;
+  }
 `;
 
 const FlexContent = styled.div`

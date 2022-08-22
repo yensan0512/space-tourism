@@ -13,7 +13,9 @@ const Position = styled.div`
   padding:200px 0px 50px 0px;
   font-family:Bodoni MT;
 
-  
+  @media screen and (max-width: 1028px) {
+    padding:20px 0px 50px 0px;
+  }
 `;
 
 const Name = styled.h1`
@@ -30,9 +32,13 @@ const Sentence = styled.h3`
   text-align:start;
   opacity:0.5;
   margin:0;
-  padding:50px 150px 0px 180px;
+  padding:50px 150px 0px 150px;
   line-height:2.0;
   letter-spacing:2px;
+
+  @media screen and (max-width: 1028px) {
+    padding:50px 0px 0px 0px;
+  }
 `;
 
 function CrewProfile({ PositionSpace, NameSpace, Experience }: {

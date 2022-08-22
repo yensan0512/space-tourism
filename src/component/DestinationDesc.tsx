@@ -8,6 +8,11 @@ const InnerFlexMenuContainer = styled.div`
   gap:30px;
   margin-top:200px;
   // justify-content:center;
+
+  @media screen and (max-width: 1028px) {
+    margin-top:50px;
+    justify-content:center;
+  }
 `;
 
 const InnerFlexContent = styled.div`
@@ -28,7 +33,11 @@ const BigLabel = styled.h1`
   color:var(--white);
   letter-spacing:2px;
   font-family: serif;
-  margin:50px 0 50px 0;
+  margin:50px 0 20px 0;
+
+  @media screen and (max-width: 1028px) {
+    text-align:center;
+  }
   
 `;
 
@@ -39,6 +48,11 @@ const Sentence = styled.div`
   font-size:20px;
   letter-spacing:2px;
   padding-right:200px;
+
+  @media screen and (max-width: 1028px) {
+    text-align:justify;
+    padding:0px 10px 0px 10px;
+  }
 `;
 
 const InnerFlexFooterContainer = styled.div`

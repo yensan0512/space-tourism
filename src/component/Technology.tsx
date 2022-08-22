@@ -11,7 +11,12 @@ const Wrapper = styled.div`
 
 const FlexContainer = styled.div`
   display:flex;
-  flex-wrap:wrap;
+  //flex-wrap:wrap;
+
+  @media screen and (max-width: 1028px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FlexContent = styled.div`
@@ -23,6 +28,10 @@ const FlexContent = styled.div`
 
 const SmallFlexContent = styled.div`
   flex:30%;
+
+  @media screen and (max-width: 1028px) {
+    flex:unset;
+  }
 `;
 
 const FlexColumn = styled.div`
@@ -109,6 +118,7 @@ function Technology() {
               TitleTech="THE TERMINOLOGY ..."
               HeaderTech={HeaderTech}
               DescTech={DescTech}
+              
             />
           </div>
         </FlexContent>

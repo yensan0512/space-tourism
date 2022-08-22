@@ -15,9 +15,16 @@ import { useLocation } from 'react-router-dom';
 const Wrapper = styled.div`
   width:100vw;
   height:100vh;
+
+  @media screen and (max-width: 1028px) {
+    overflow-x: hidden;
+  }
 `;
 
-const Background = styled.div(({ bg }: { bg: string }) => `
+const Background = styled.div(({ bg, adjustHeight }: { 
+  bg: string,
+  adjustHeight: boolean
+}) => `
   //background: url(static/assets/home/background-home-desktop.jpg);
   //background:url(static/assets/destination/background-destination-desktop.jpg);
   //background: url(static/assets/crew/background-crew-desktop.jpg);
@@ -26,13 +33,17 @@ const Background = styled.div(({ bg }: { bg: string }) => `
   height:100%;
   background-size:cover;
 
+  @media screen and (max-width: 1028px) {
+    ${adjustHeight ? 'height: unset' :''};
+  }
+
 `);
 
 const Layer = styled.div`
   //opacity:0.2;
   width:100vw;
   height:100px;
-  padding-top:100px;
+  padding-top:20px;
   //backdrop-filter:blur(20px);
  // border: 1px solid rgba(255, 0, 0, .5);
   //background-color:black;
@@ -94,7 +105,10 @@ function App() {
   return (
 
     <Wrapper>
-      <Background bg={background}>
+      <Background
+        bg={background}
+        adjustHeight={location.pathname !== "/"}
+      >
         <Layer>
           <MenuList>
             <Menu to="/">00 Home</Menu>

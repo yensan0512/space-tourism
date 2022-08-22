@@ -17,7 +17,12 @@ const BigLabel = styled.h1`
   color:var(--white);
   letter-spacing:2px;
   font-family: serif;
-  margin:0px 0 100px 0;
+  margin:0px 0 50px 0;
+
+  @media screen and (max-width: 1028px) {
+    margin:0px 0px 0px 0;
+    letter-spacing:0px;
+  }
   
 `;
 
@@ -29,6 +34,11 @@ const Description = styled.h3`
   letter-spacing:2px;
   padding-right:200px;
   line-height:1.6;
+
+  @media screen and (max-width: 1028px) {
+    padding:0px 10px 0px 0px;
+    letter-spacing:0px;
+  }
 `;
 
 

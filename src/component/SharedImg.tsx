@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 
 const Img = styled.img`
   background-size:cover;
+  justify-self:center;
 `;
 
 function ShareImg({ Photo }: {
